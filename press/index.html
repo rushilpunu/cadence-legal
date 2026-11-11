@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0A0A0C">
+<title>Cadence Press Kit</title>
+<meta name="description" content="Press kit for Cadence, a daily journal for iPhone: description, key facts, screenshots, videos, app icon and a full download.">
+<meta property="og:title" content="Cadence Press Kit">
+<meta property="og:description" content="One sentence a day. Description, key facts, screenshots, videos and the app icon for Cadence, a daily journal for iPhone.">
+<meta property="og:type" content="website">
+<style>
+  /* Layout: one quiet column on obsidian. A huge lowercase wordmark under an amber aura,
+     then generous sections that each hold one idea. Boldness lives in the wordmark only. */
+  @font-face {
+    font-family: "Bricolage Grotesque";
+    src: url("fonts/BricolageGrotesque.ttf") format("truetype");
+    font-weight: 200 800;
+    font-stretch: 75% 100%;
+    font-display: swap;
+  }
+
+  :root {
+    --obsidian: #0A0A0C;
+    --ink: #EFEAE0;
+    --ink-soft: #A8A194;
+    --amber: #F5A524;
+    --amber-deep: #D97706;
+    --hair: rgba(239, 234, 224, 0.10);
+    --veil: rgba(239, 234, 224, 0.045);
+
+    --font: "Bricolage Grotesque", ui-rounded, "Avenir Next", "Helvetica Neue", system-ui, sans-serif;
+
+    --col: 68rem;
+    --gap: clamp(1rem, 2.4vw, 1.75rem);
+    --section: clamp(6rem, 14vw, 11rem);
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--obsidian);
+    color: var(--ink);
+    font-family: var(--font);
+    font-weight: 350;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    padding-inline: max(16px, env(safe-area-inset-left, 0px)) max(16px, env(safe-area-inset-right, 0px));
+    padding-block: 0 clamp(3rem, 8vw, 6rem);
+    overflow-x: clip;
+    text-rendering: optimizeLegibility;
+  }
+
+  .wrap { width: 100%; max-width: var(--col); margin-inline: auto; }
+  section { margin-top: var(--section); }
+
+  h1, h2, h3, p, dl, dd, figure { margin: 0; }
+  h1, h2 { text-wrap: balance; font-weight: 300; letter-spacing: -0.03em; line-height: 1.02; }
+
+  a { color: var(--ink); text-decoration-color: var(--amber-deep); text-decoration-thickness: 1px; text-underline-offset: 0.25em; }
+  a:hover { color: var(--amber); }
+  a:focus-visible, video:focus-visible, .button:focus-visible {
+    outline: 2px solid var(--amber);
+    outline-offset: 4px;
+    border-radius: 6px;
+  }
+
+  /* ---------- hero ---------- */
+  .hero {
+    position: relative;
+    margin-top: 0;
+    padding-block: clamp(5rem, 16vw, 12rem) 0;
+    isolation: isolate;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: -40vh 0 auto;
+    height: 120vh;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(38% 34% at 50% 34%, rgba(245, 165, 36, 0.30), transparent 70%),
+      radial-gradient(60% 50% at 30% 48%, rgba(217, 119, 6, 0.16), transparent 72%),
+      radial-gradient(50% 42% at 72% 40%, rgba(252, 211, 77, 0.07), transparent 70%);
+    filter: blur(28px);
+  }
+  .wordmark {
+    font-size: clamp(4.25rem, 21vw, 14rem);
+    font-weight: 300;
+    letter-spacing: -0.055em;
+    line-height: 0.9;
+    margin-left: -0.04em;
+    text-shadow: 0 0 80px rgba(245, 165, 36, 0.35);
+  }
+  .tagline {
+    margin-top: clamp(1.25rem, 3vw, 2.25rem);
+    font-size: clamp(1.9rem, 5.6vw, 3.75rem);
+    font-weight: 300;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    color: var(--amber);
+  }
+
+  /* ---------- section headings ---------- */
+  .label {
+    font-size: clamp(1.4rem, 3vw, 1.75rem);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: var(--ink-soft);
+    margin-bottom: clamp(1.75rem, 4vw, 3rem);
+  }
+
+  /* ---------- description ---------- */
+  .about p {
+    max-width: 40ch;
+    font-size: clamp(1.4rem, 3.1vw, 2rem);
+    font-weight: 300;
+    letter-spacing: -0.015em;
+    line-height: 1.38;
+    text-wrap: pretty;
+  }
+  .about p b { font-weight: 500; }
+
+  /* ---------- key facts ---------- */
+  .facts { border-top: 1px solid var(--hair); }
+  .facts > div {
+    display: grid;
+    grid-template-columns: minmax(8rem, 14rem) minmax(0, 1fr);
+    gap: 0.5rem 2rem;
+    align-items: baseline;
+    padding-block: clamp(1.25rem, 2.6vw, 1.75rem);
+    border-bottom: 1px solid var(--hair);
+  }
+  .facts dt { color: var(--ink-soft); font-size: 1rem; }
+  .facts dd { font-size: clamp(1.25rem, 2.6vw, 1.625rem); font-weight: 400; letter-spacing: -0.01em; overflow-wrap: anywhere; }
+  .placeholder { color: var(--amber); }
+
+  /* ---------- gallery ---------- */
+  .header-shot {
+    display: block;
+    border-radius: clamp(14px, 2.4vw, 28px);
+    overflow: hidden;
+    background: var(--veil);
+  }
+  .header-shot img { display: block; width: 100%; height: auto; }
+
+  .shots {
+    list-style: none;
+    margin: var(--gap) 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--gap);
+  }
+  .shots li { flex: 0 0 calc((100% - var(--gap)) / 2); min-width: 0; }
+  @media (min-width: 640px) { .shots li { flex-basis: calc((100% - 2 * var(--gap)) / 3); } }
+  @media (min-width: 960px) { .shots li { flex-basis: calc((100% - 3 * var(--gap)) / 4); } }
+
+  .shot { display: block; text-decoration: none; }
+  .shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: clamp(12px, 2vw, 20px);
+    background: var(--veil);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+  }
+  .shot:hover img, .shot:focus-visible img {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px -20px rgba(245, 165, 36, 0.45);
+  }
+  .caption { display: block; margin-top: 0.75rem; font-size: 0.9375rem; line-height: 1.4; color: var(--ink-soft); }
+  .caption strong { display: block; font-weight: 400; color: var(--ink); font-size: 1rem; }
+
+  /* ---------- videos ---------- */
+  .videos {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+    gap: var(--gap);
+  }
+  .videos li { min-width: 0; }
+  video {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 9 / 16;
+    border-radius: clamp(12px, 2vw, 20px);
+    background: #000;
+  }
+
+  /* ---------- icon ---------- */
+  .icon-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--gap) clamp(2rem, 6vw, 5rem); }
+  .icon-row img {
+    display: block;
+    width: clamp(10rem, 28vw, 16rem);
+    height: auto;
+    aspect-ratio: 1;
+    border-radius: 22.37%;
+    box-shadow: 0 30px 90px -30px rgba(245, 165, 36, 0.5);
+  }
+  .icon-row > div { min-width: 0; }
+  .icon-row p { max-width: 26rem; color: var(--ink-soft); margin-top: 0.5rem; }
+
+  /* ---------- download everything ---------- */
+  .everything {
+    position: relative;
+    isolation: isolate;
+    padding-block: clamp(3rem, 8vw, 6rem);
+    text-align: center;
+  }
+  .everything::before {
+    content: "";
+    position: absolute;
+    inset: -20% 0;
+    z-index: -1;
+    pointer-events: none;
+    background: radial-gradient(34% 40% at 50% 50%, rgba(245, 165, 36, 0.20), transparent 72%);
+    filter: blur(24px);
+  }
+  .everything h2 { font-size: clamp(2.5rem, 8vw, 5.5rem); }
+  .everything p { margin: 1.25rem auto 0; max-width: 34rem; color: var(--ink-soft); }
+  .button {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+    margin-top: 2.25rem;
+    padding: 1.1rem 2.75rem;
+    border-radius: 999px;
+    background: var(--ink);
+    color: var(--obsidian);
+    font-size: 1.375rem;
+    font-weight: 500;
+    line-height: 1.2;
+    text-decoration: none;
+    box-shadow: 0 0 60px -8px rgba(245, 165, 36, 0.55);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .button small { font-size: 0.875rem; font-weight: 400; color: #5E584C; }
+  .button:hover { color: var(--obsidian); transform: translateY(-2px); box-shadow: 0 0 80px -4px rgba(245, 165, 36, 0.75); }
+
+  /* ---------- misc ---------- */
+  .dl { display: inline-block; margin-top: 0.4rem; font-size: 0.9375rem; color: var(--ink-soft); }
+  .dl a { color: var(--ink); }
+  .dl a:hover { color: var(--amber); }
+
+  footer {
+    margin-top: var(--section);
+    padding-top: 2rem;
+    border-top: 1px solid var(--hair);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 2rem;
+    justify-content: space-between;
+    font-size: 0.9375rem;
+    color: var(--ink-soft);
+  }
+  footer p { min-width: 0; }
+  footer nav { display: flex; gap: 1.5rem; }
+
+  @media (max-width: 560px) {
+    .facts > div { grid-template-columns: minmax(0, 1fr); gap: 0.25rem; }
+    .button { padding-inline: 2rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <header class="hero">
+    <h1 class="wordmark">cadence</h1>
+    <p class="tagline">one sentence a day.</p>
+  </header>
+
+  <section class="about" aria-labelledby="about-h">
+    <h2 class="label" id="about-h">about</h2>
+    <p>Cadence is a daily journal for iPhone that asks for one sentence a day: 280 characters, or up to eight sentences if you choose. Each day becomes a glowing tile in a 365-day grid, coloured by a 1 to 5 rating, so the year fills in as you write it. Every morning the Lock Screen shows what you wrote a year ago. Streaks come with a Streak Shield, Milestones mark 7, 30, 100 and 365 days, and small habits keep a few other things in view. There is no account, no server and no analytics, and entries sync only through your own iCloud. Cadence is free, with optional Pro as an annual plan with a 3-day trial, or monthly. Made by Rushil, a solo developer.</p>
+  </section>
+
+  <section aria-labelledby="facts-h">
+    <h2 class="label" id="facts-h">key facts</h2>
+    <dl class="facts">
+      <div><dt>name</dt><dd>Cadence – a daily journal</dd></div>
+      <div><dt>platform</dt><dd>iPhone, iOS 17 or later</dd></div>
+      <div><dt>price</dt><dd>Free, with in-app purchases</dd></div>
+      <div><dt>privacy</dt><dd>Data Not Collected</dd></div>
+      <div><dt>developer</dt><dd>Rushil, solo developer</dd></div>
+      <div><dt>press contact</dt><dd><a class="placeholder" href="mailto:PRESS_EMAIL">PRESS_EMAIL</a></dd></div>
+      <div><dt>app store</dt><dd><a class="placeholder" href="APP_STORE_LINK">APP_STORE_LINK</a></dd></div>
+    </dl>
+  </section>
+
+  <section aria-labelledby="shots-h">
+    <h2 class="label" id="shots-h">screenshots</h2>
+    <a class="header-shot" href="download/header-3840x1646.png" download aria-label="Download the header image, 3840 by 1646 pixels, PNG, 3.6 MB">
+      <img src="img/header.webp" width="1600" height="686" alt="Cadence header image: the app on iPhone beside the line one sentence a day." decoding="async">
+    </a>
+    <p class="dl"><a href="download/header-3840x1646.png" download>download header</a> · 3840 × 1646 png · 3.6 MB</p>
+
+    <ul class="shots">
+      <li><a class="shot" href="download/screenshots/screenshot-1.png" download><img src="img/screenshot-1.webp" width="600" height="1304" loading="lazy" decoding="async" alt="Screenshot 1: one sentence a day. The Today screen shows a 44 day streak and the day's sentence."><span class="caption"><strong>one sentence a day.</strong>download · 1206 × 2622 png</span></a></li>
+      <li><a class="shot" href="download/screenshots/screenshot-2.png" download><img src="img/screenshot-2.webp" width="600" height="1304" loading="lazy" decoding="async" alt="Screenshot 2: watch your year fill in. Streak counts above a grid of glowing green tiles."><span class="caption"><strong>watch your year fill in.</strong>download · 1206 × 2622 png</span></a></li>
+      <li><a class="shot" href="download/screenshots/screenshot-3.png" download><img src="img/screenshot-3.webp" width="600" height="1304" loading="lazy" decoding="async" alt="Screenshot 3: rate how it felt. The composer with a violet background and five rating dots."><span class="caption"><strong>rate how it felt.</strong>download · 1206 × 2622 png</span></a></li>
+      <li><a class="shot" href="download/screenshots/screenshot-4.png" download><img src="img/screenshot-4.webp" width="600" height="1304" loading="lazy" decoding="async" alt="Screenshot 4: see what you wrote a year ago. Cards from one, two and three years back."><span class="caption"><strong>see what you wrote a year ago.</strong>download · 1206 × 2622 png</span></a></li>
+      <li><a class="shot" href="download/screenshots/screenshot-5.png" download><img src="img/screenshot-5.webp" width="600" height="1304" loading="lazy" decoding="async" alt="Screenshot 5: keep a few small habits. Two habit cards, Walk and Read, with their streaks."><span class="caption"><strong>keep a few small habits.</strong>download · 1206 × 2622 png</span></a></li>
+      <li><a class="shot" href="download/screenshots/screenshot-6.png" download><img src="img/screenshot-6.webp" width="600" height="1304" loading="lazy" decoding="async" alt="Screenshot 6: read any day again. A single saved day open on a soft blue background."><span class="caption"><strong>read any day again.</strong>download · 1206 × 2622 png</span></a></li>
+      <li><a class="shot" href="download/screenshots/screenshot-7.png" download><img src="img/screenshot-7.webp" width="600" height="1304" loading="lazy" decoding="async" alt="Screenshot 7: make it yours. The palette picker with eight colour palettes."><span class="caption"><strong>make it yours.</strong>download · 1206 × 2622 png</span></a></li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="videos-h">
+    <h2 class="label" id="videos-h">videos</h2>
+    <ul class="videos">
+      <li>
+        <video controls muted playsinline preload="metadata" poster="img/poster-01-setup.webp" aria-label="Video: setting up Cadence and picking a colour palette">
+          <source src="download/videos/01-setup.mp4" type="video/mp4">
+        </video>
+        <span class="caption"><strong>setting up</strong></span>
+        <span class="dl"><a href="download/videos/01-setup.mp4" download>download mp4</a> · 1080 × 1920 · 0.5 MB</span>
+      </li>
+      <li>
+        <video controls muted playsinline preload="metadata" poster="img/poster-03-pinch.webp" aria-label="Video: pinching the year grid to explore a year of glowing tiles">
+          <source src="download/videos/03-pinch.mp4" type="video/mp4">
+        </video>
+        <span class="caption"><strong>the year grid</strong></span>
+        <span class="dl"><a href="download/videos/03-pinch.mp4" download>download mp4</a> · 1080 × 1920 · 0.7 MB</span>
+      </li>
+      <li>
+        <video controls muted playsinline preload="metadata" poster="img/poster-02-composer.webp" aria-label="Video: writing a day's sentence in the composer">
+          <source src="download/videos/02-composer.mp4" type="video/mp4">
+        </video>
+        <span class="caption"><strong>writing a day</strong></span>
+        <span class="dl"><a href="download/videos/02-composer.mp4" download>download mp4</a> · 1080 × 1920 · 1.4 MB</span>
+      </li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="icon-h">
+    <h2 class="label" id="icon-h">app icon</h2>
+    <div class="icon-row">
+      <a href="download/cadence-icon-1024.png" download aria-label="Download the app icon, 1024 by 1024 pixels, PNG">
+        <img src="img/icon.webp" width="512" height="512" loading="lazy" decoding="async" alt="The Cadence app icon: a grid of glowing amber tiles on a dark ground.">
+      </a>
+      <div>
+        <p>A grid of days as amber tiles, brighter for the better ones, the way the year grid draws them.</p>
+        <p class="dl" style="margin-top:0.75rem"><a href="download/cadence-icon-1024.png" download>download icon</a> · 1024 × 1024 png · 0.2 MB</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="everything" aria-labelledby="all-h">
+    <h2 id="all-h">everything, in one go.</h2>
+    <p>Seven screenshots, the header image, the app icon and three videos, as one zip.</p>
+    <a class="button" href="cadence-press-kit.zip" download>download the press kit <small>cadence-press-kit.zip · 18.6 MB</small></a>
+  </section>
+
+  <footer>
+    <p>Set in Bricolage Grotesque, used under the <a href="fonts/OFL.txt">SIL Open Font License</a>.</p>
+    <nav aria-label="Other Cadence pages">
+      <a href="../privacy/">privacy</a>
+      <a href="../support/">support</a>
+    </nav>
+  </footer>
+
+</main>
+</body>
+</html>
